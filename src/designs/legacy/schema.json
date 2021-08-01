@@ -1,0 +1,123 @@
+{
+    "properties": {
+        "claim": {
+            "title": "Claim",
+            "type": "object",
+            "properties": {
+                "lineactive": {
+                    "title": "Linie aktivieren",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "description": {
+            "type": "object",
+            "title": "Beschreibung",
+            "properties": {
+                "enabled": {
+                    "title": "Beschreibungstext aktivieren",
+                    "type": "boolean"
+                }
+            },
+            "dependencies": {
+                "enabled": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "enabled": {
+                                    "const": false
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "enabled": {
+                                    "const": true
+                                },
+                                "text": {
+                                    "title": "Beschreibung",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "image": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+                "type": {
+                    "title": "Bild-Stil",
+                    "type": "string",
+                    "default": "noimage",
+                    "oneOf": [
+                        {
+                            "title": "Kein Bild",
+                            "const": "noimage"
+                        },
+                        {
+                            "title": "Hintergrund",
+                            "const": "background"
+                        },
+                        {
+                            "title": "Nebeneinander",
+                            "const": "sidebyside"
+                        }
+                    ]
+                }
+            },
+            "dependencies": {
+                "type": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "type": {
+                                    "const": "noimage"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "image", "opacity"
+                            ],
+                            "properties": {
+                                "type": {
+                                    "const": "background"
+                                },
+                                "image": {
+                                    "type": "string"
+                                },
+                                "opacity": {
+                                    "type": "integer",
+                                    "title": "Deckkraft",
+                                    "minimum": 10,
+                                    "maximum": 100,
+                                    "multipleOf": 10,
+                                    "default": 100
+
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "image"
+                            ],
+                            "properties": {
+                                "type": {
+                                    "const": "sidebyside"
+                                },
+                                "image": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+    
+        }
+    }
+  }
