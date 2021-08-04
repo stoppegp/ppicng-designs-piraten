@@ -1,146 +1,125 @@
 {
-    "properties": {
-        "logo": {
-            "type": "null"
+  "properties": {
+    "logo": {
+      "type": "null"
+    },
+    "claim": {
+      "properties": {
+        "style": {
+          "type": "string",
+          "default": "claim",
+          "title": "",
+          "oneOf": [
+            { "title": "Claim", "const": "claim" },
+            { "title": "Claim+Text", "const": "claimtext" },
+            { "title": "Zitat", "const": "quote" }
+          ]
         },
-        "claim" : {
-            "properties": {
-                "style": {
-                    "type": "string",
-                    "default": "claim",
-                    "title": "",
-                    "oneOf": [
-                        {"title": "Claim", "const":  "claim"},
-                        {"title": "Zitat", "const":  "quote"}
-                    ]
-                },
-                "color": {
-                    "title": "Farbe",
-                    "type": "string",
-                    "default": "#1d1e1c",
-                    "oneOf": [
-                        {
-                            "title": "Schwarz",
-                            "const": "#1d1e1c"
-                        },
-                        {
-                            "title": "Weiß",
-                            "const": "#ffffff"
-                        },
-                        {
-                            "title": "Orange",
-                            "const": "#ff8800"
-                        }
-                    ]
-                },
-                "shadow" :{
-                    "type": "boolean",
-                    "default": false,
-                    "title": "Schatten"
-                },
-                "name": {
-                    "title": "Name",
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string",
-                    "title": "Zusatztext",
-                    "default": "Mit Uploadfilter und Linksteuer ist das freie Internet bedroht."
-                }
-            }
-        },
-        "image": {
-            "type": "object",
-            "title": "Bild",
-            "required": ["type"],
-            "properties": {
-                "type": {
-                    "title": "Bild-Stil",
-                    "type": "string",
-                    "default": "noimage",
-                    "oneOf": [
-                        {
-                            "title": "Kein Bild",
-                            "const": "noimage"
-                        },
-                        {
-                            "title": "Hintergrund",
-                            "const": "background"
-                        },
-                        {
-                            "title": "Nebeneinander",
-                            "const": "sidebyside"
-                        }
-                    ]
-                }
-            },
-            "dependencies": {
-                "type": {
-                    "oneOf": [
-                        {
-                            "properties": {
-                                "type": {
-                                    "const": "noimage"
-                                }
-                            }
-                        },
-                        {
-                            "required": [
-                                "opacity"
-                            ],
-                            "properties": {
-                                "type": {
-                                    "const": "background"
-                                },
-                                "image": {
-                                    "type": "string"
-                                },
-                                "opacity": {
-                                    "type": "number",
-                                    "title": "Deckkraft",
-                                    "minimum": 10,
-                                    "maximum": 100,
-                                    "multipleOf": 10,
-                                    "default": 100
-                                }
-                            }
-                        },
-                        {
-                            "required": [
-                               "position", "divider"
-                            ],
-                            "properties": {
-                                "type": {
-                                    "const": "sidebyside"
-                                },
-                                "image": {
-                                    "type": "string"
-                                },
-                                "position": {
-                                    "type": "string",
-                                    "default": "left",
-                                    "title": "Position",
-                                    "oneOf": [
-                                        {"title":  "Rechts", "const":  "right"},
-                                        {"title":  "Links", "const":  "left"},
-                                        {"title":  "Oben", "const":  "top"},
-                                        {"title":  "Unten", "const":  "bottom"}
-                                    ]
-                                },
-                                "divider": {
-                                    "type": "number",
-                                    "title": "Anteil am Bild",
-                                    "minimum": 20,
-                                    "maximum": 70,
-                                    "multipleOf": 1,
-                                    "default": 50
-                                }
-                            }
-                        }
-                    ]
-                }
-            }
-    
+        "name": {
+          "title": "Name",
+          "type": "string"
         }
+      },
+      "dependencies": {
+        "style": {
+          "oneOf": [
+            {
+              "properties": {
+                "style": { "const": "claim" },
+                "text": { "maxLength": 150 }
+              }
+            },
+            {
+              "properties": {
+                "style": { "const": "claimtext" },
+                "text": { "maxLength": 150 },
+                "desc": {
+                  "type": "string",
+                  "title": "Zusatztext",
+                  "default": "Mit Uploadfilter und Linksteuer ist das freie Internet bedroht.",
+                  "maxLength": 500
+                }
+              }
+            },
+            {
+                "properties": {
+                  "style": { "const": "quote" },
+                  "text": { "title": "Zitat" }
+                }
+              }
+          ]
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "title": "Bild",
+      "required": ["style"],
+      "properties": {
+        "style": {
+          "title": "Bild-Stil",
+          "type": "string",
+          "default": "noimage",
+          "oneOf": [
+            {
+              "title": "Kein Bild",
+              "const": "noimage"
+            },
+            {
+              "title": "Nebeneinander (empfohlen)",
+              "const": "sidebyside"
+            },
+            {
+              "title": "Hintergrund",
+              "const": "background"
+            }
+          ]
+        }
+      },
+      "dependencies": {
+        "style": {
+          "oneOf": [
+            {
+              "properties": {
+                "style": {
+                  "const": "noimage"
+                }
+              }
+            },
+            {
+              "properties": {
+                "style": {
+                  "const": "background"
+                },
+                "image": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "properties": {
+                "style": {
+                  "const": "sidebyside"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "default": "right",
+                  "title": "Position",
+                  "oneOf": [
+                    { "title": "Rechts (empfohlen)", "const": "right" },
+                    { "title": "Links", "const": "left" },
+                    { "title": "Oben", "const": "top" },
+                    { "title": "Unten", "const": "bottom" }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
     }
   }
+}

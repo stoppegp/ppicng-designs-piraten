@@ -7,6 +7,6 @@ const design: DesignInterface = {
   title: "Bundestagswahl 2021",
   menuSchema: schema as Object,
   menuSchemaUI: schemaUI as Object,
-  Image: Image,
+  Image: Image
 };
 export default design;

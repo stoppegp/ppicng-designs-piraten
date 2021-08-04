@@ -6,23 +6,12 @@
       "text": {
         "ui:widget": "textarea"
       },
-      "description": {
+      "desc": {
         "ui:widget": "textarea"
-      },
-      "color": {
-        "ui:widget": "circlecolor"
-      }
-    },
-    "size": {
-      "width": {
-        "ui:widget": "range"
-      },
-      "height": {
-        "ui:widget": "range"
       }
     },
     "image": {
-        "type": {
+        "style": {
           "ui:widget": "togglebutton"
         },
         "image": {
