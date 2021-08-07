@@ -27,7 +27,7 @@ const TextBox: React.FC<TextBoxProps> = ({
   color = "gray",
   shadowEnabled = false
 }) => {
-  const [claimRatio, setClaimRatio] = useState(logoBox ? 0.4 : 0.7);
+  const [claimRatio, setClaimRatio] = useState(logoBox ? 0.45 : 0.7);
   const [logoRatio0, setLogoRatio0] = useState(0.3);
   let logoRatio;
     
