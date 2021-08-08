@@ -88,7 +88,6 @@ const Image: React.FC<ImagePreviewProps> = ({
 
   const overlayFont = formData?.claim?.font || "PoliticsHead"
   const descFont = formData?.description?.font || "DejaRip"
-  console.log("overlayFont", overlayFont)
 
   let overlayWidth;
   let overlayHeight;
