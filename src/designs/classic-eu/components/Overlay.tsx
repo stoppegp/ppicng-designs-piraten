@@ -23,6 +23,7 @@ interface OverlayProps {
   claimColor?: string;
   descColor?: string;
   font?: string;
+  descFont?: string;
   logo?: LogoInterface;
   logoColor?: string;
   claimBgColor?: string;
@@ -43,6 +44,7 @@ const Overlay: React.FC<OverlayProps> = ({
   claimBgColor,
   descColor = "black",
   font = "PoliticsHead",
+  descFont = "DejaRip",
   logo,
   logoColor,
   imageBgSrc,
@@ -148,7 +150,7 @@ const Overlay: React.FC<OverlayProps> = ({
             y={claimRatio * baseHeight + margin / 2}
             width={baseWidth}
             height={(1 - claimRatio - logoRatio) * baseHeight - margin / 2}
-            fontFamily="DejaRip"
+            fontFamily={descFont}
             color={descColor}
           />
         )}

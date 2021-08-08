@@ -8,7 +8,7 @@ const design: DesignInterface = {
   menuSchema: schema as Object,
   menuSchemaUI: schemaUI as Object,
   Image: Image,
-  fontFamilies: ["PoliticsHead", "DejaRip"],
+  fontFamilies: ["PoliticsHead", "DejaRip", "DejaRipItalic", "DejaRipBoldItalic", "DejaRipBold"],
   logoActive: true
 };
 export default design;

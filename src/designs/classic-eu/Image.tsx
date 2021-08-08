@@ -9,6 +9,9 @@ import DividerH from "../../components/canvaselements/DividerH";
 import Overlay from "./components/Overlay";
 import "./fonts/PoliticsHead.css";
 import "./fonts/DejaRip.css";
+import "./fonts/DejaRipItalic.css";
+import "./fonts/DejaRipBoldItalic.css";
+import "./fonts/DejaRipBold.css";
 import "./style.css";
 
 const Image: React.FC<ImagePreviewProps> = ({
@@ -83,18 +86,9 @@ const Image: React.FC<ImagePreviewProps> = ({
     overlayTransparency = formData?.image?.transparency / 100 || 0;
   }
 
-  let overlayFont
-  switch (formData?.claim?.font) {
-    case "dejarip":
-      overlayFont = "DejaRip"     
-      break
-      case "arial":
-        overlayFont = "Arial"     
-        break
-    default:
-      overlayFont = "PoliticsHead"
-  }
-
+  const overlayFont = formData?.claim?.font || "PoliticsHead"
+  const descFont = formData?.description?.font || "DejaRip"
+  console.log("overlayFont", overlayFont)
 
   let overlayWidth;
   let overlayHeight;
@@ -208,6 +202,7 @@ const Image: React.FC<ImagePreviewProps> = ({
         descColor={descColor}
         claimBgColor={claimBgColor}
         font={overlayFont}
+        descFont={descFont}
         logo={logo}
         logoColor={claimBgColor}
         imageBgSrc={imageBgSrc}
