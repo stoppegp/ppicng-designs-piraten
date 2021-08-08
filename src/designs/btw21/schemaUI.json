@@ -16,7 +16,7 @@
         },
         "image": {
             "ui:widget": "file",
-            "ui:accept": [".png",".jpg", ".gif"]
+            "ui:accept": ["image/*"]
         },
         "opacity": {
           "ui:widget": "range"
