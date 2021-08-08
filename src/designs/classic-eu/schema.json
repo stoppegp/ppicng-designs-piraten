@@ -25,6 +25,11 @@
             { "title": "DejaRip Italic", "const": "DejaRipItalic" },
             { "title": "Arial", "const": "Arial" }
           ]
+        },
+        "fontinfo": {
+          "title": "Test",
+          "type": "null",
+          "description": "Hinweis: Arial ist keine freie Schriftart und kann deshalb nur verwendet werden, wenn sie auf dem eigenen System installiert ist."
         }
       }
     },
@@ -62,7 +67,10 @@
                     { "title": "DejaRip", "const": "DejaRip" },
                     { "title": "DejaRip Italic", "const": "DejaRipItalic" },
                     { "title": "DejaRip Bold", "const": "DejaRipBold" },
-                    { "title": "DejaRip Bold-Italic", "const": "DejaRipBoldItalic" },
+                    {
+                      "title": "DejaRip Bold-Italic",
+                      "const": "DejaRipBoldItalic"
+                    },
                     { "title": "Arial", "const": "Arial" }
                   ]
                 }
