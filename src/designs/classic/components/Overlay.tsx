@@ -96,6 +96,7 @@ const Overlay: React.FC<OverlayProps> = ({
         width={width}
         height={height}
         fill={bgColor}
+        listening={false}
         opacity={1 - (transparency || 0)}
       />
       <Group x={baseX} y={baseY} width={baseWidth} height={baseHeight}>
