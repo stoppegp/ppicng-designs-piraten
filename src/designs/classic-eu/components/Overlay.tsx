@@ -83,21 +83,6 @@ const Overlay: React.FC<OverlayProps> = ({
     }
   }
 
-  /*   useEffect(() => {
-    if (logoGroupRef && logoGroupRef.current) {
-      const checkX = logoGroupRef.current.absolutePosition().x+logoGroupRef.current.attrs.width/2
-      const checkY = logoGroupRef.current.absolutePosition().y+logoGroupRef.current.attrs.height/2
-      const canvas = document.querySelector('canvas') as HTMLCanvasElement;
-      const context = canvas.getContext('2d') as CanvasRenderingContext2D
-      if (canvas) {
-        const pixelData = context.getImageData(checkX, checkY, 1, 1).data
-        const hexColor = rgbHex(pixelData[0], pixelData[1], pixelData[2])
-        const cc = new ContrastColor({bgColor: "#" + hexColor, fgDarkColor: "dark", fgLightColor: "light", threshold: 180})
-        setLogoVariant(cc.contrastColor())
-      }
-    }
-  }, [logoVariant]); */
-
   return (
     <>
       <Rect
