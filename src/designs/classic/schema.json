@@ -21,10 +21,10 @@
         "font": {
           "title": "Schriftart",
           "type": "string",
-          "default": "politicshead",
+          "default": "PoliticsHead",
           "oneOf": [
-            { "title": "Politics Head", "const": "politicshead" },
-            { "title": "DejaRip", "const": "dejarip" }
+            { "title": "Politics Head", "const": "PoliticsHead" },
+            { "title": "DejaRip Italic", "const": "DejaRipItalic" }
           ]
         }
       }

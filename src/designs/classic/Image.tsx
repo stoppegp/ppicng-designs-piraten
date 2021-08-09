@@ -103,7 +103,7 @@ const Image: React.FC<ImagePreviewProps> = ({
     overlayTransparency = formData?.image?.transparency / 100 || 0;
   }
 
-  const overlayFont = (formData?.claim?.font === "dejarip") ? "DejaRip" : "PoliticsHead"
+    const overlayFont = (formData?.claim?.font && ["PoliticsHead", "DejaRipItalic"].includes(formData?.claim?.font)) ? formData?.claim?.font : "PoliticsHead"
 
   let overlayWidth;
   let overlayHeight;
