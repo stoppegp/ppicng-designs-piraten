@@ -13,6 +13,7 @@ interface TextBoxProps {
   borderMargin?: number;
   color?: string
   shadowEnabled?: boolean
+  mainFont?: string
 }
 
 const TextBox: React.FC<TextBoxProps> = ({
@@ -25,7 +26,8 @@ const TextBox: React.FC<TextBoxProps> = ({
   logoBox,
   borderMargin = 0,
   color = "gray",
-  shadowEnabled = false
+  shadowEnabled = false,
+  mainFont = "BebasNeue"
 }) => {
   const [claimRatio, setClaimRatio] = useState(logoBox ? 0.45 : 0.7);
   const [logoRatio0, setLogoRatio0] = useState(0.3);
@@ -43,7 +45,7 @@ const TextBox: React.FC<TextBoxProps> = ({
       font = "DejaRipItalic"
   } else {
         claim = formData?.claim?.text || ""
-        font="BebasNeue"
+        font=mainFont
   }
 
   const boxHeight = height - 2 * margin;
@@ -75,8 +77,8 @@ const TextBox: React.FC<TextBoxProps> = ({
           x={x + margin}
           y={y + margin}
           width={boxWidth}
-          height={claimRatio * boxHeight}
-          fontFamily="BebasNeue"
+          height={claimRatio * boxHeight * ((font==="PoliticsHead") ? 0.95 : 1)}
+          fontFamily={font}
           valign="bottom"
           color={color}
           shadowEnabled={shadowEnabled}

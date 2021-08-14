@@ -16,6 +16,7 @@ interface LogoBoxProps {
   name?: string;
   nameMargin?: number;
   fillBg?: boolean;
+  mainFont?: string
 }
 const LogoBox: React.FC<LogoBoxProps> = ({
   x,
@@ -26,6 +27,7 @@ const LogoBox: React.FC<LogoBoxProps> = ({
   name = "",
   nameMargin = 0,
   fillBg = false,
+  mainFont = "BebasNeue"
 }) => {
   const logoRatio = 1000 / 292;
   const namePart = name ? 0.4 : 0;
@@ -54,7 +56,7 @@ const LogoBox: React.FC<LogoBoxProps> = ({
   const nameWidth = width - nameMargin;
 
   let fontSize = nameHeight * 0.95;
-  const probeWidth = calculateTextWidth(name, fontSize + "px BebasNeue");
+  const probeWidth = calculateTextWidth(name, fontSize + "px " + mainFont);
   let realNameWidth = probeWidth;
   if (probeWidth > nameWidth) {
     fontSize *= (nameWidth / probeWidth) * 0.99;
@@ -65,7 +67,7 @@ const LogoBox: React.FC<LogoBoxProps> = ({
       {fillBg && (
         <Rect
           x={width - nameMargin - realNameWidth - fontSize / 6}
-          y={nameY + nameHeight / 2 - fontSize * 0.6}
+          y={nameY + nameHeight / 2 - fontSize * 0.6 + ((mainFont == "PoliticsHead") ? fontSize/8 : 0)}
           width={realNameWidth + nameMargin + fontSize / 6 + 1}
           height={fontSize}
           fill="white"
@@ -79,7 +81,7 @@ const LogoBox: React.FC<LogoBoxProps> = ({
           width={nameWidth}
           height={nameHeight}
           lineHeight={Math.max(nameHeight / fontSize, 0.1)}
-          fontFamily="BebasNeue"
+          fontFamily={mainFont}
           fontSize={fontSize}
           align="right"
           valign="middle"

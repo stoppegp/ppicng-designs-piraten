@@ -151,6 +151,10 @@ const Image: React.FC<ImagePreviewProps> = ({
     }
   }
 
+  let mainFont = "BebasNeue"
+  if ((formData?.claim?.advanced?.font || "") !== "") {
+    mainFont = formData?.claim?.advanced?.font
+  }
 
   const LogoBoxIm = (
     <LogoBox
@@ -162,6 +166,7 @@ const Image: React.FC<ImagePreviewProps> = ({
       name={formData?.claim?.name || ""}
       nameMargin={borderStrokeWidth + margin}
       fillBg={logoFillBg}
+      mainFont={mainFont}
     />
   );
 
@@ -199,6 +204,7 @@ const Image: React.FC<ImagePreviewProps> = ({
         borderMargin={borderStrokeWidth}
         color={(imageBgActive) ? "white": "#1d1e1c"}
         shadowEnabled={imageBgActive}
+        mainFont={mainFont}
       />
       {imageSbsActive && imageSbsPosition === "left" && (
         <DividerV

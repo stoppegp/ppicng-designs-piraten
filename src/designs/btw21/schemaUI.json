@@ -1,36 +1,37 @@
 {
-    "claim": {
-      "style": {
-        "ui:widget": "togglebutton"
-      },
-      "text": {
-        "ui:widget": "textarea"
-      },
-      "desc": {
-        "ui:widget": "textarea"
-      }
+  "claim": {
+    "style": {
+      "ui:widget": "togglebutton"
+    },
+    "text": {
+      "ui:widget": "textarea"
+    },
+    "desc": {
+      "ui:widget": "textarea"
+    },
+    "advanced": {
+      "advancedOnly": true
+    }
+  },
+  "image": {
+    "style": {
+      "ui:widget": "togglebutton"
     },
     "image": {
-        "style": {
-          "ui:widget": "togglebutton"
-        },
-        "image": {
-            "ui:widget": "file",
-            "ui:accept": ["image/*"]
-        },
-        "opacity": {
-          "ui:widget": "range"
-        },
-        "divider": {
-          "ui:widget": "range"
-        },
-      "position": {
-        "ui:widget": "togglebutton"
-      }
+      "ui:widget": "file",
+      "ui:accept": ["image/*"]
     },
-    "logo": {
-      "logo": {
-
-      }
+    "opacity": {
+      "ui:widget": "range"
+    },
+    "divider": {
+      "ui:widget": "range"
+    },
+    "position": {
+      "ui:widget": "togglebutton"
     }
+  },
+  "logo": {
+    "logo": {}
   }
+}

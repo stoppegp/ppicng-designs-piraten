@@ -18,6 +18,22 @@
         "name": {
           "title": "Name",
           "type": "string"
+        },
+        "advanced": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "font": {
+              "type": "string",
+              "title": "Schriftart",
+              "oneOf": [
+                {"title": "Standard", "const": ""},
+                {"title": "Bebas Neue", "const": "BebasNeue"},
+                {"title": "Politics Head", "const": "PoliticsHead"}
+              ],
+              "default": ""
+            }
+          }
         }
       },
       "dependencies": {

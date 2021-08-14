@@ -8,6 +8,7 @@ const design: DesignInterface = {
   menuSchema: schema as Object,
   menuSchemaUI: schemaUI as Object,
   Image: Image,
-  fontFamilies: ["BebasNeue", "DejaRip", "DejaRipItalic"]
+  fontFamilies: ["BebasNeue", "DejaRip", "DejaRipItalic"],
+  advancedOptionsAvailable: true,
 };
 export default design;
