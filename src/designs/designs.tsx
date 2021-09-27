@@ -5,8 +5,8 @@ import classic from './classic/design'
 import classiceu from './classic-eu/design'
 
 const designs:Record<string,DesignInterface> = {
-    "btw21": btw21,
     "classic": classic,
+    "btw21": btw21,
     "classic-eu": classiceu
 }
 export default designs
