@@ -1,0 +1,57 @@
+{
+  "claim": {
+    "text": {
+      "ui:widget": "textarea"
+    }
+  },
+  "description": {
+    "text": {
+      "ui:widget": "textarea"
+    }
+  },
+  "style": {
+    "style": {
+      "ui:widget": "imageselect"
+    },
+    "background": {
+      "ui:widget": "circlecolor"
+    },
+    "claim": {
+      "ui:widget": "circlecolor"
+    },
+    "claimBgColor": {
+      "ui:widget": "circlecolor"
+    },
+    "description": {
+      "ui:widget": "circlecolor"
+    }
+  },
+  "backgroundImage": {
+    "image": {
+      "ui:widget": "imageselect"
+    }
+  },
+  "personImage": {
+    "image": {
+      "ui:widget": "imageselect"
+    }
+  },
+  "image": {
+    "style": {
+      "ui:widget": "togglebutton"
+    },
+    "image": {
+      "ui:widget": "file",
+      "ui:accept": ["image/*"]
+    },
+    "transparency": {
+      "ui:widget": "range"
+    },
+    "divider": {
+      "ui:widget": "range"
+    },
+    "position": {
+      "ui:widget": "togglebutton"
+    }
+  }
+}
