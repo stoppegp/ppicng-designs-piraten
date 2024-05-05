@@ -1,9 +1,13 @@
 
 .imageselector.root_backgroundImage_image label {
     width: 100px;
-    height: 100px;
+    height: 70px;
 }
 .imageselector.root_style_style label {
+    width: 100px;
+    height: 100px;
+}
+.imageselector.root_personImage_image label {
     width: 100px;
     height: 100px;
 }

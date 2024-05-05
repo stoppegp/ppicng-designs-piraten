@@ -72,6 +72,15 @@ const Overlay: React.FC<OverlayProps> = ({
         personWRatio2 = 0.55
       }
       descFactor = 0.25
+    } else if (imagePersonSrc?.includes("gruppe")) {
+      if (width/height > 1.2) {
+        personWRatio = 0.4
+        personWRatio2 = 0.6
+      } else {
+        personWRatio = 0.6
+        personWRatio2 = 0.55
+      }
+      descFactor = 0.1
     } else {
       if (width/height > 1.2) {
         personWRatio = 0.6
