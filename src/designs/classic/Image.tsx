@@ -15,7 +15,6 @@ const Image: React.FC<ImagePreviewProps> = ({
   width,
   height,
   formData,
-  children,
   logo
 }) => {
 

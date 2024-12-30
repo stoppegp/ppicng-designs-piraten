@@ -18,7 +18,6 @@ const Image: React.FC<ImagePreviewProps> = ({
   width,
   height,
   formData,
-  children,
   logo,
 }) => {
   const [overlayRatio, setOverlayRatio] = useState(0.5);

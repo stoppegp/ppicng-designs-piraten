@@ -1,6 +1,7 @@
 import AutoScaleText from "../../../components/canvaselements/AutoScaleText";
 import React, { ReactElement, useState } from "react";
 import DividerH from "../../../components/canvaselements/DividerH";
+import LogoBox from "../components/LogoBox";
 
 interface TextBoxProps {
   x: number;
@@ -9,7 +10,7 @@ interface TextBoxProps {
   height: number;
   margin?: number;
   formData: any;
-  logoBox?: ReactElement;
+  logoBox?: ReactElement<any>;
   borderMargin?: number;
   color?: string
   shadowEnabled?: boolean
